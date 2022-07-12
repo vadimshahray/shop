@@ -1,0 +1,28 @@
+{
+	"categories": [
+		{
+			"id": 1,
+			"name": "Computer"
+		},
+		{
+			"id": 2,
+			"name": "Other"
+		}
+	],
+	"products": [
+		{
+			"id": 1,
+			"name": "Asus Laptop",
+			"category": "Computer",
+			"price": 5000,
+			"amount": 5
+		},
+		{
+			"id": 2,
+			"name": "Asus Laptop 2",
+			"category": "Computer",
+			"price": 5000,
+			"amount": 10
+		}
+	]
+}
