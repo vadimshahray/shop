@@ -1,9 +1,18 @@
-import ShopBoard from './ShopBoard';
+import ProductsDatabase from './database/ProductsDatabase';
+import MainContent from './components/MainContent';
+import React from 'react';
+import './styles/index.css';
 
-function App() {
-  return (
-    <ShopBoard amount={5}></ShopBoard>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    ProductsDatabase.initialize();
+  }
+
+  render() {
+    return <MainContent></MainContent>
+  }
 }
 
 export default App;
