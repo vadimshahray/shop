@@ -13,12 +13,33 @@
 		{
 			"id": 1,
 			"name": "Asus Laptop",
-			"category": "Computer",
+			"category": "Other",
 			"price": 5000,
 			"amount": 5
 		},
 		{
 			"id": 2,
+			"name": "Asus Laptop",
+			"category": "Other",
+			"price": 5000,
+			"amount": 5
+		},
+		{
+			"id": 3,
+			"name": "Asus Laptop",
+			"category": "Other",
+			"price": 5000,
+			"amount": 5
+		},
+		{
+			"id": 4,
+			"name": "Asus Laptop 11",
+			"category": "Other",
+			"price": 5000,
+			"amount": 5
+		},
+		{
+			"id": 20,
 			"name": "Asus Laptop 2",
 			"category": "Computer",
 			"price": 5000,

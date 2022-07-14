@@ -1,15 +1,17 @@
 import React from 'react';
-import ChooseCategoryList from './ChooseCategoryList';
 import ProductsDatabase from '../database/ProductsDatabase';
+import CategoryList from './CategoryList';
+import ProductsList from './ProductsList';
+import ProductInfo from './ProductInfo';
 
 class ShopContainer extends React.Component {
   #products = null;
   #categories = null;
 
-  constructor(props) {
-    super(props);
+  constructor( props ) {
+    super( props );
 
-    this.#products   = ProductsDatabase.selectAllProducts();
+    this.#products = ProductsDatabase.selectAllProducts();
     this.#categories = ProductsDatabase.selectAllCategories();
 
     this.state = {
@@ -18,19 +20,55 @@ class ShopContainer extends React.Component {
     }
   }
 
-
   render() {
-    return (
-      this.state.currentCategory === null
-        ? <ChooseCategoryList categories={ this.#categories } onChoose={ category => this.handleCategoryChoose(category) } />
-        : <span>{ `Chosen category is ${ this.state.currentCategory.name }` }</span> 
-    );
+    if ( this.state.currentCategory === null ) {
+      return (
+        <CategoryList
+          categories={ this.#categories }
+          onItemChoose={ category => this.#handleCategoryChoose( category ) } />
+      );
+    } else if ( this.state.currentProduct === null ) {
+      return (
+        <ProductsList
+          products={ this.#getCategoryProducts() }
+          onItemChoose={ product => this.#handleProductChoose( product ) }
+          onCategoryNull={ () => this.#handleCategoryNull() } />
+      );
+    } else {
+      return (
+        <ProductInfo
+          product={ this.state.currentProduct }
+          onProductNull={ () => this.#handleProductNull() } />
+      );
+    }
   }
 
-  handleCategoryChoose(category) {
-    this.setState({
+
+  #getCategoryProducts() {
+    return this.#products.filter( p => p.category === this.state.currentCategory.name );
+  }
+
+
+  #handleCategoryChoose( category ) {
+    this.setState( {
       currentCategory: category
-    });
+    } );
+  }
+  #handleCategoryNull() {
+    this.setState( {
+      currentCategory: null
+    } );
+  }
+
+  #handleProductChoose( product ) {
+    this.setState( {
+      currentProduct: product
+    } );
+  }
+  #handleProductNull() {
+    this.setState( {
+      currentProduct: null
+    } );
   }
 }
 
