@@ -1,8 +1,13 @@
 import React from 'react';
+<<<<<<< HEAD
 import ProductsDatabase from '../database/ProductsDatabase';
 import CategoryList from './CategoryList';
 import ProductsList from './ProductsList';
 import ProductInfo from './ProductInfo';
+=======
+import ChooseCategoryList from './ChooseCategoryList';
+import ProductsDatabase from '../database/ProductsDatabase';
+>>>>>>> 3c13ba8732ab4713e40807995b8f35fa4fca9be8
 
 class ShopContainer extends React.Component {
   #products = null;
