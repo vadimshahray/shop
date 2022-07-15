@@ -1,0 +1,20 @@
+:root {
+  --color-primary: #343A40;
+  --color-link: #318CE7;
+
+  --border-s: 4px;
+  --border-m: 8px;
+
+  --padding-s: 8px;
+  --padding-m: 12px;
+}
+
+* {
+  font-family: sans-serif;
+}
+
+.list_default {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
