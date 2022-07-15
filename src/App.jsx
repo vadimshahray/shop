@@ -4,8 +4,8 @@ import React from 'react';
 import './styles/index.css';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor( props ) {
+    super( props );
 
     ProductsDatabase.initialize();
   }

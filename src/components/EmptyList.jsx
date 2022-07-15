@@ -4,7 +4,7 @@ function EmptyList( props ) {
   return (
     <div>
       <p>{ props.message }</p>
-      <button onClick={ () => props.onButtonClick() }>Выбырать другую категорию</button>
+      { props.onButtonClick && <button onClick={ () => props.onButtonClick() }> { props.btnMessage } </button> }
     </div>
   );
 }
